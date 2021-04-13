@@ -1,2 +1,1 @@
-# Data structure and Algorithm in C language
-
+# Data structure and Algorithm in C language along with projects
