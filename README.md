@@ -1,2 +1,2 @@
-# C-projects
-This respository is all about projects made in c programming language
+# Data structure and Algorithm in C language
+
