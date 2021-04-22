@@ -1,0 +1,108 @@
+import random
+playercount=0
+compcount=0
+
+a=["lady", "tiger","hunter"]
+print("             ==>RULES<== \n[The game has 3 components LADY ,TIGER and HUNTER.\n 1.The LADY slap HUNTER\n 2.HUNTER kills TIGER\n 3.TIGER eats LADY\n The games runs for 5 rounds , palyer with maximun points at end of round wins ]\n         ==>LET BEGIN THE GAME<==\n")
+
+player=str(input("Enter your name:"))
+print(f"Welcome {player} in the game LADY TIGER HUNTER\n")
+
+def game():
+    global playercount
+    global compcount
+    i=0
+    while (i<6):
+        choice=int(input("Whats your choice 1:lady 2:Tiger 3:Hunter:"))
+        
+        comp=random.choice(a)
+        print(f"computer has choosed {comp}")
+    
+        if (choice==1 and comp=="hunter" or choice==2 and comp=="lady" or choice==3 and comp=="tiger"):
+            print(f"==>{player} won<==\n")
+            playercount=playercount+1
+        
+        elif (choice==1 and comp=="tiger" or choice==2 and comp=="hunter" or choice==3 and comp=="lady"):
+            print(f"==>computer won<==\n")
+            compcount=compcount+1
+        
+        elif (choice==1 and comp=="lady" or choice==2 and comp=="tiger" or choice==3 and comp=="hunter"):
+            print("==>Drawn<==")
+         
+        i+=1
+        print(f"{player} score : %d"%playercount)  
+        print("computer score : %d\n"%compcount)
+    
+    check_win()
+
+def check_win():
+    print("==>FINAL RESULT<==\n")
+    
+    if (playercount>compcount):
+        print(f"==>{player} WON<==")    
+    elif(compcount>playercount):
+        print("==>COMPUTER WON<==")
+    else:
+        print("==>GAME IS DRAWN<==")
+  
+game()
+
+"""output
+==>RULES<==
+[The game has 3 components LADY ,TIGER and HUNTER.
+ 1.The LADY slap HUNTER
+ 2.HUNTER kills TIGER
+ 3.TIGER eats LADY
+ The games runs for 5 rounds , palyer with maximun points at end of round wins ]
+         ==>LET BEGIN THE GAME<==
+
+Enter your name:Aditya
+Welcome Aditya in the game LADY TIGER HUNTER
+
+Whats your choice 1:lady 2:Tiger 3:Hunter:2
+computer has choosed lady
+==>Aditya won<==
+
+Aditya score : 1
+computer score : 0
+
+Whats your choice 1:lady 2:Tiger 3:Hunter:3
+computer has choosed hunter
+==>Drawn<==
+Aditya score : 1
+computer score : 0
+
+Whats your choice 1:lady 2:Tiger 3:Hunter:1
+computer has choosed tiger
+==>computer won<==
+
+Aditya score : 1
+computer score : 1
+
+Whats your choice 1:lady 2:Tiger 3:Hunter:2
+computer has choosed lady
+==>Aditya won<==
+
+Aditya score : 2
+computer score : 1
+
+Whats your choice 1:lady 2:Tiger 3:Hunter:3
+computer has choosed tiger
+==>Aditya won<==
+
+Aditya score : 3
+computer score : 1
+
+Whats your choice 1:lady 2:Tiger 3:Hunter:1
+computer has choosed tiger
+==>computer won<==
+
+Aditya score : 3
+computer score : 2
+
+==>FINAL RESULT<==
+
+==>Aditya WON<==
+"""
+
+
